@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>js apps</title>
+    </head>
+    <body>
+      <h1>Area Calculator</h1>
+    <script>
+       
+        var choice = prompt("Enter choice:\n1.square\n2.circle\n3.rectangle\n4.triangle\n5.trapezoid")
+        
+        if (choice=="1"){
+            var height = prompt("Enter length")
+            var width = prompt("Enter width")
+            var area = height*width
+            alert(`Total area: ${area}`)
+        }
+         if (choice=="2"){
+            var r = prompt("Enter radius")
+            var area2 = 3.14*r*r 
+            alert(`Total area: ${area2}`)
+        }
+        if (choice=="3"){
+            var height2 = prompt("Enter length")
+            var width2 = prompt("Enter width")
+            var area3 = height2*width2
+            alert(`Total area: ${area3}`)
+        }if (choice=="4"){
+            var height3 = prompt("Enter height")
+            var base = prompt("Enter base")
+            var area4 = (1/2)*height3*base
+            alert(`Total area: ${area}`)
+        }
+        if (choice=="5"){
+            var height4 = prompt("Enter height")
+            var length1 = prompt("Enter length a")
+            var length2 = prompt("Enter length b")
+            var area4 = (1/2)*height4*(length1+length2)
+            alert(`Total area: ${area}`)
+        }
+
+    </script>
+
+    </body>
+</html>
