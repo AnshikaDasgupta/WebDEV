@@ -1,44 +1,258 @@
-<html>
-    <head>
-        <title>js apps</title>
-    </head>
-    <body>
-      <h1>Area Calculator</h1>
-    <script>
-       
-        var choice = prompt("Enter choice:\n1.square\n2.circle\n3.rectangle\n4.triangle\n5.trapezoid")
-        
-        if (choice=="1"){
-            var height = prompt("Enter length")
-            var width = prompt("Enter width")
-            var area = height*width
-            alert(`Total area: ${area}`)
-        }
-         if (choice=="2"){
-            var r = prompt("Enter radius")
-            var area2 = 3.14*r*r 
-            alert(`Total area: ${area2}`)
-        }
-        if (choice=="3"){
-            var height2 = prompt("Enter length")
-            var width2 = prompt("Enter width")
-            var area3 = height2*width2
-            alert(`Total area: ${area3}`)
-        }if (choice=="4"){
-            var height3 = prompt("Enter height")
-            var base = prompt("Enter base")
-            var area4 = (1/2)*height3*base
-            alert(`Total area: ${area}`)
-        }
-        if (choice=="5"){
-            var height4 = prompt("Enter height")
-            var length1 = prompt("Enter length a")
-            var length2 = prompt("Enter length b")
-            var area4 = (1/2)*height4*(length1+length2)
-            alert(`Total area: ${area}`)
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowVibe</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    </script>
+</head>
+<body class="bg-black text-pink-300">
+ <header class="bg-gray-900 p-10 flex jusitfy-between items-center rounded-3xl">
+    <h1 class="text-pink-300 text-4xl font-bold">₊✩‧₊˚GlowVibe౨ৎ˚₊✩‧₊</h1>
+    <div class="relative">
+    <button class="text-3xl bg-pink-600 rounded-full w-15 h-15 border-xl">🛍️</button>
+    <span id="cart-count" class="absolute-top-2-right-2 bg-pink-600 text-white rounded-full w-5 h-6 p-1 text-3xl">0</span>
+    </div>
+ </header>
+ <main id="products" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols4 gap-6"></main>
 
-    </body>
+ <footer class="bg-pink-400 text-2xl text-black p-4 rounded-3xl text-center">&copy; 2025 GlowVibe | All rights reserved</footer>
+    
+
+  <script>
+    const beautyProducts = [
+
+{
+
+id: 1,
+
+name: "Face Serum",
+
+category: "Skincare",
+
+price: 499,
+
+image: "https://images.pexels.com/photos/3373731/pexels-photo-3373731.jpeg"
+
+},
+
+{
+
+id: 2,
+
+name: "Matte Lipstick",
+
+category: "Makeup",
+
+price: 299,
+
+image: "https://images.pexels.com/photos/3373742/pexels-photo-3373742.jpeg"
+
+},
+
+{
+
+id: 3,
+
+name: "Moisturizer",
+
+category: "Skincare",
+
+price: 399,
+
+image: "https://images.pexels.com/photos/3762876/pexels-photo-3762876.jpeg"
+
+},
+
+{
+
+id: 4,
+
+name: "Eyeliner",
+
+category: "Makeup",
+
+price: 199,
+
+image: "https://images.pexels.com/photos/4132536/pexels-photo-4132536.jpeg"
+
+},
+
+{
+
+id: 5,
+
+name: "Sunscreen SPF 50",
+
+category: "Skincare",
+
+price: 349,
+
+image: "https://images.pexels.com/photos/4269691/pexels-photo-4269691.jpeg"
+
+},
+
+{
+
+id: 6,
+
+name: "Nail Polish - Nude",
+
+category: "Makeup",
+
+price: 149,
+
+image: "https://images.pexels.com/photos/247287/pexels-photo-247287.jpeg"
+
+},
+
+{
+
+id: 7,
+
+name: "Shampoo",
+
+category: "Haircare",
+
+price: 249,
+
+image: "https://images.pexels.com/photos/4041396/pexels-photo-4041396.jpeg"
+
+},
+
+{
+
+id: 8,
+
+name: "Conditioner",
+
+category: "Haircare",
+
+price: 259,
+
+image: "https://images.pexels.com/photos/4153142/pexels-photo-4153142.jpeg"
+
+},
+
+{
+
+id: 9,
+
+name: "Face Wash",
+
+category: "Skincare",
+
+price: 199,
+
+image: "https://images.pexels.com/photos/3065173/pexels-photo-3065173.jpeg"
+
+},
+
+{
+
+id: 10,
+
+name: "Lip Balm",
+
+category: "Skincare",
+
+price: 99,
+
+image: "https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg"
+
+},
+
+{
+
+id: 11,
+
+name: "Blush",
+
+category: "Makeup",
+
+price: 269,
+
+image: "https://images.pexels.com/photos/2882254/pexels-photo-2882254.jpeg"
+
+},
+
+{
+
+id: 12,
+
+name: "Hair Oil",
+
+category: "Haircare",
+
+price: 199,
+
+image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg"
+
+},
+
+{
+
+id: 13,
+
+name: "Foundation",
+
+category: "Makeup",
+
+price: 549,
+
+image: "https://images.pexels.com/photos/3373740/pexels-photo-3373740.jpeg"
+
+},
+
+{
+
+id: 14,
+
+name: "Makeup Remover",
+
+category: "Skincare",
+
+price: 299,
+
+image: "https://images.pexels.com/photos/2044948/pexels-photo-2044948.jpeg"
+
+},
+
+{
+
+id: 15,
+
+name: "Face Mask",
+
+category: "Skincare",
+
+price: 249,
+
+image: "https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg"
+
+}
+
+];
+
+const Productlist = document.getElementById("products")
+beautyProducts.foreach(products =>{
+
+products.InnerHTML += `
+
+<div class="bg-gray-800 text-pink-600 p-4 rounded-4xl">
+    <img src=${product.image}/>
+    <h2>${product.name}</h2>
+    <h3>${product.price}</h3>
+    
+    
+</div>
+
+
+`
+
+
+})
+  </script>
+</body>
 </html>
